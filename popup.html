@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Watch</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      width: 350px;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    
+    .header {
+      background-color: #4285f4;
+      color: white;
+      padding: 12px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .header h1 {
+      margin: 0;
+      font-size: 18px;
+    }
+    
+    #clearBtn {
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      border-radius: 4px;
+      padding: 4px 8px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    
+    #clearBtn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    #alertsList {
+      max-height: 300px;
+      overflow-y: auto;
+      padding: 10px;
+    }
+    
+    .alert {
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      border-left: 4px solid #ccc;
+      background-color: #f9f9f9;
+    }
+    
+    .alert-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      font-size: 12px;
+    }
+    
+    .alert-type {
+      font-weight: bold;
+    }
+    
+    .alert-time {
+      color: #666;
+    }
+    
+    .alert-message {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    
+    .alert-personal-data {
+      background-color: #ffebee;
+      border-left-color: #f44336;
+    }
+    
+    .alert-third-party-tracker {
+      background-color: #fff8e1;
+      border-left-color: #ffc107;
+    }
+    
+    .footer {
+      border-top: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+      font-size: 11px;
+      color: #666;
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 20px;
+      color: #999;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Privacy Watch</h1>
+    <button id="clearBtn">Clear Alerts</button>
+  </div>
+  
+  <div id="alertsList">
+    <div class="empty-state">No privacy alerts detected</div>
+  </div>
+  
+  <div class="footer">
+    Monitoring your online privacy in real-time
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
