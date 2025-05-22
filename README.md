@@ -37,11 +37,11 @@
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/NoobCoder143/Privacy-Checker-Extension.git
+   git clone https://github.com/NoobCoder143/PrivacyWatch-Extension.git
    ```
 2. Go to `chrome://extensions/`
 3. Enable **Developer Mode** (top right).
-4. Click **"Load unpacked"** and select the `/Privacy-Checker-Extension` directory.
+4. Click **"Load unpacked"** and select the `/PrivacyWatch-Extension` directory.
 
 
 
