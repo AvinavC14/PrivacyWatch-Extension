@@ -115,13 +115,20 @@ chrome.webRequest.onBeforeRequest.addListener(
   []
 );
 
-// Listen for messages from popup
+// Listen for messages from popup and content scripts
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'getAlerts') {
     sendResponse({ alerts: privacyAlerts });
   } else if (request.action === 'clearAlerts') {
     privacyAlerts = [];
     chrome.storage.local.set({ 'privacyAlerts': [] });
+    sendResponse({ success: true });
+  } else if (request.action === 'contentAlert') {
+    addPrivacyAlert('Content Scan', `Sensitive data detected on ${request.data.domain}`);
+    sendResponse({ success: true });
+
+  } else if (request.action === 'formSubmission') {
+    addPrivacyAlert('Form Submission', `Form with sensitive data is being sent to ${request.data.action}`);
     sendResponse({ success: true });
   }
   return true; // Keeps the message channel open for async responses
